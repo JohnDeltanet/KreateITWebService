@@ -1,0 +1,9 @@
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Business\bin\Release\KreateIT.Business.dll
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Business\bin\Release\KreateIT.Business.pdb
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Business\bin\Release\KreateIT.Data.dll
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Business\bin\Release\KreateIT.Data.pdb
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Business\obj\Release\KreateIT.Business.csprojResolveAssemblyReference.cache
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Business\obj\Release\KreateIT.Business.dll
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Business\obj\Release\KreateIT.Business.pdb
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Business\bin\Release\KreateIT.Exceptions.dll
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Business\bin\Release\KreateIT.Exceptions.pdb

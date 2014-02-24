@@ -1,0 +1,5 @@
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITDAL\bin\Release\KreateIT.Data.dll.config
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITDAL\bin\Release\KreateIT.Data.dll
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITDAL\bin\Release\KreateIT.Data.pdb
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITDAL\obj\Release\KreateIT.Data.dll
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITDAL\obj\Release\KreateIT.Data.pdb

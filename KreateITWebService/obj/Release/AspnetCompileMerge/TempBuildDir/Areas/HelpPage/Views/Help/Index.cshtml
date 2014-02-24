@@ -1,0 +1,80 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using KreateITWebService.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+
+@{
+    ViewBag.Title = "KreateIT Web API Help Page";
+
+    // Group APIs by controller
+    ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+}
+
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<header class="help-page">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <h2>Introduction</h2>
+            <p>
+                This is the KreateIT web api for creating events, users and course credits, and for enrolling users onto events.
+            </p>
+            <p>
+                The base url for all the api calls is https://environtec.academy0611.co.uk/ws/
+            </p>
+            <p>
+                All calls to the api use ssl and require the user name and password of an administrative user.<br/> 
+                If you do not want to use an existing administrator, a new one can be created using the KreateIT management centre.
+            </p>
+            <p>
+                An example of creating a new user using jquery with a JSON payload would be:<br /><br />
+                <textarea rows="18" cols="150">
+    var Jsonstring = { Title: 'Mr', FirstName: 'John', LastName: 'Smith', UserName: 'John.Smith@something.com', 
+                    Password: 'deltanet', EMail: 'John.Smith@something.com', ChangePassword: true, Language: 'en-GB' };
+    $.ajax({
+        url: "https://environtec.academy0611.co.uk/ws/api/user",
+        type: "Post",
+        data: JSON.stringify(Jsonstring),
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        username: 'AdminUserName',
+        password: 'AdminPassword',
+        beforeSend: function(jqXHR, settings) {
+            if (settings.username) {
+                jqXHR.setRequestHeader('Authorization', 'Basic ' + btoa(settings.username + ':' + settings.password));
+            }
+        },
+        success: function (data) { },
+        error: function () { alert('error'); }
+    });
+                </textarea>
+            </p><br />
+            <h2>General Use</h2>
+            <p>
+                Enrolling a user on a course requires that both the user and the event pre-exist.<br/><br/>
+                If a user already exists but you do not know their username, you can find it by listing the users using the GET api/users call.<br/>
+                If the user does not exist, you can create them using the POST api/users call.<br /><br/>
+                If an event already exists but you do not know the event ID, you can find it by listing the events using the GET api/event call.<br/>
+                If the event does not exist, you can creare it using the POST api/event call. You will need a course ID in order to create an event, which can be found by listing the courses by using GET api/course.<br/><br />
+                Once an event exists, you can (optionally) create course credits for that event using POST api/CourseCredit. A course credit creates a unique key usable for a specified number of users, that can either be given out to users for them to self-enrol on the site, or can be used when creating and enrolment using POST api/UserEnrolment.<br/><br /> 
+                <br/><br/>
+
+                
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        @foreach (var group in apiGroups)
+        {
+            @Html.DisplayFor(m => group, "ApiGroup")
+        }
+    </section>
+</div>
