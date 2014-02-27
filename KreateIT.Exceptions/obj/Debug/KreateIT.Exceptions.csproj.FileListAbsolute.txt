@@ -2,3 +2,4 @@ C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.
 C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Exceptions\bin\Debug\KreateIT.Exceptions.pdb
 C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Exceptions\obj\Debug\KreateIT.Exceptions.dll
 C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Exceptions\obj\Debug\KreateIT.Exceptions.pdb
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateIT.Exceptions\obj\Debug\KreateIT.Exceptions.csprojResolveAssemblyReference.cache

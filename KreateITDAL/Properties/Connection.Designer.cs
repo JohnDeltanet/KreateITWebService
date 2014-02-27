@@ -26,8 +26,8 @@ namespace KreateIT.Data.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ORACLESERVER\\SQL2008DEV;Initial Catalog=K5_ENVIRONTEC_BE;User ID=sa;P" +
-            "assword=D3lt@net")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WIN-A6IVLFBUBP2;Initial Catalog=K5_ENVIRONTEC_BE_test;User Id=environ" +
+            "tecsql;Password=environ9986435677tec;")]
         public string SQLConnString {
             get {
                 return ((string)(this["SQLConnString"]));

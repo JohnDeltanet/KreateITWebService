@@ -580,6 +580,26 @@
             </param>
             <returns></returns>
         </member>
+        <member name="M:KreateITWebService.Controllers.EntityController.Get">
+            <summary>
+            Get a list of entities
+            </summary>
+            <returns>List of entities in JSON or XML format</returns>
+        </member>
+        <member name="M:KreateITWebService.Controllers.EntityController.Get(System.Int32)">
+            <summary>
+            Shows details of a single entity
+            </summary>
+            <param name="id"></param>
+            <returns>Entity details in JSON or XML format</returns>
+        </member>
+        <member name="M:KreateITWebService.Controllers.EntityController.PostEvent(KreateITWebService.Models.EntityData)">
+            <summary>
+            Creates a new entity
+            </summary>
+            <param name="Entity">Entity data in JSON or XML format</param>
+            <returns></returns>
+        </member>
         <member name="M:KreateITWebService.Controllers.EventController.GetEvents">
             <summary>
             Gets a list of events
@@ -606,6 +626,26 @@
             <param name="Event">
             Event data in JSON or XML format
             </param>
+            <returns></returns>
+        </member>
+        <member name="M:KreateITWebService.Controllers.RegionController.Get">
+            <summary>
+            Get a list of regions
+            </summary>
+            <returns>List of regions in JSON or XML format</returns>
+        </member>
+        <member name="M:KreateITWebService.Controllers.RegionController.Get(System.Int32)">
+            <summary>
+            Shows details of a single region
+            </summary>
+            <param name="id"></param>
+            <returns>Region details in JSON or XML format</returns>
+        </member>
+        <member name="M:KreateITWebService.Controllers.RegionController.PostEvent(KreateITWebService.Models.RegionData)">
+            <summary>
+            Creates a new region
+            </summary>
+            <param name="Region">Region data in JSON or XML format</param>
             <returns></returns>
         </member>
         <member name="M:KreateITWebService.Controllers.UserController.GetUsers">
@@ -745,6 +785,46 @@
             The number of user enrolments to allow for this course credit
             </summary>
         </member>
+        <member name="P:KreateITWebService.Models.EntityDisplay.ID">
+            <summary>
+            Unique ID for the entity
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.EntityDisplay.Code">
+            <summary>
+            Unique ID for the entity
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.EntityDisplay.Name">
+            <summary>
+            Short code for entity
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.EntityDisplay.RegionID">
+            <summary>
+            ID of region to which this entity belongs
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.EntityDisplay.RegionName">
+            <summary>
+            Name of the region to which this entity relates
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.EntityData.RegionID">
+            <summary>
+            ID number of the region to which this entity relates
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.EntityData.Code">
+            <summary>
+            Short code for entity (optional)
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.EntityData.Name">
+            <summary>
+            Name of the entity
+            </summary>
+        </member>
         <member name="P:KreateITWebService.Models.EventDisplay.ID">
             <summary>
             The unique ID for this event
@@ -788,6 +868,31 @@
         <member name="P:KreateITWebService.Models.EventData.EndDate">
             <summary>
             The end date of the event (optional)
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.RegionDisplay.ID">
+            <summary>
+            Unique ID for the region
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.RegionDisplay.Code">
+            <summary>
+            Short code for the region
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.RegionDisplay.Name">
+            <summary>
+            Name of the region
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.RegionData.Code">
+            <summary>
+            Short code for the region (optional)
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.RegionData.Name">
+            <summary>
+            Name of the region
             </summary>
         </member>
         <member name="P:KreateITWebService.Models.UserData.Title">
@@ -845,6 +950,16 @@
             Allow access to the scheduled reports options under the 'Management Tools' section of the website? (true/false)
             </summary>
         </member>
+        <member name="P:KreateITWebService.Models.UserData.RegionID">
+            <summary>
+            ID of region (Company). ID's can be obtained using GET api/region
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.UserData.EntityID">
+            <summary>
+            ID of entity (Department or Location). ID's can be obtained using GET api/entity
+            </summary>
+        </member>
         <member name="T:KreateITWebService.Models.UserDisplay">
             <summary>
             User output data
@@ -875,11 +990,6 @@
             Username for user. Must by unique.
             </summary>
         </member>
-        <member name="P:KreateITWebService.Models.UserDisplay.Password">
-            <summary>
-            Password for user.
-            </summary>
-        </member>
         <member name="P:KreateITWebService.Models.UserDisplay.EMail">
             <summary>
             Users EMail.
@@ -893,6 +1003,26 @@
         <member name="P:KreateITWebService.Models.UserDisplay.Language">
             <summary>
             Standard language-culture name. 
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.UserDisplay.RegionID">
+            <summary>
+            ID for the users Region (Company)
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.UserDisplay.RegionName">
+            <summary>
+            Name of the users Region (Company)
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.UserDisplay.EntityID">
+            <summary>
+            ID for the users Entity (Department or Location)
+            </summary>
+        </member>
+        <member name="P:KreateITWebService.Models.UserDisplay.EntityName">
+            <summary>
+            Name of the users Entity (Department or Location)
             </summary>
         </member>
         <member name="P:KreateITWebService.Models.UserEnrolmentData.UserName">

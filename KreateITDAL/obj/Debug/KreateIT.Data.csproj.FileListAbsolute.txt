@@ -3,3 +3,4 @@ C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITD
 C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITDAL\bin\Debug\KreateIT.Data.pdb
 C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITDAL\obj\Debug\KreateIT.Data.dll
 C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITDAL\obj\Debug\KreateIT.Data.pdb
+C:\Users\john\documents\visual studio 2013\Projects\KreateITWebService\KreateITDAL\obj\Debug\KreateIT.Data.csprojResolveAssemblyReference.cache

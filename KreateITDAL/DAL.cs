@@ -10,10 +10,15 @@ namespace KreateIT.Data
 {
     class DAL
     {
+        public static string ConnectionString()
+        {
+            return Properties.Connection.Default.SQLConnString;
+        }
+
         public static DataSet GetDataset(string SQLString, params SQLArg[] args)
         {
             DataSet ds = new DataSet();
-            using (SqlConnection con = new SqlConnection(Properties.Connection.Default.SQLConnString))
+            using (SqlConnection con = new SqlConnection(ConnectionString()))
             using (SqlCommand cmd = new SqlCommand(SQLString, con))
             {
                 con.Open();
@@ -34,7 +39,7 @@ namespace KreateIT.Data
         public static int GetDataInt(string SQLString, params SQLArg[] args)
         {
             int? s = 0;
-            using (SqlConnection con = new SqlConnection(Properties.Connection.Default.SQLConnString))
+            using (SqlConnection con = new SqlConnection(ConnectionString()))
             using (SqlCommand cmd = new SqlCommand(SQLString, con))
             {
                 con.Open();
@@ -54,7 +59,7 @@ namespace KreateIT.Data
         {
             
             int? s = 0;
-            using (SqlConnection con = new SqlConnection(Properties.Connection.Default.SQLConnString))
+            using (SqlConnection con = new SqlConnection(ConnectionString()))
             using (SqlCommand cmd = new SqlCommand(SQLString, con))
             {
                 con.Open();

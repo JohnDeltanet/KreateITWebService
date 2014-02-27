@@ -39,7 +39,7 @@
                 <textarea rows="18" cols="150" style="max-width:600px">
     var Jsonstring = { Title: 'Mr', FirstName: 'John', LastName: 'Smith', UserName: 'John.Smith@something.com', 
                     Password: 'deltanet', EMail: 'John.Smith@something.com', ChangePassword: true, Language: 'en-GB', 
-                    AllowUserCreation: true, AllowUserEnrolment: false, AllowScheduledReports: true };
+                    AllowUserCreation: true, AllowUserEnrolment: false, AllowScheduledReports: true, RegionID: 1, EntityID: 1 };
     $.ajax({
         url: "https://environtec.academy0611.co.uk/ws/api/user",
         type: "Post",
@@ -64,7 +64,7 @@
                 If a user already exists but you do not know their username, you can find it by listing the users using the GET api/users call.<br/>
                 If the user does not exist, you can create them using the POST api/users call.<br /><br/>
                 If an event already exists but you do not know the event ID, you can find it by listing the events using the GET api/event call.<br/>
-                If the event does not exist, you can creare it using the POST api/event call. You will need a course ID in order to create an event, which can be found by listing the courses by using GET api/course.<br/><br />
+                If the event does not exist, you can create it using the POST api/event call. You will need a course ID in order to create an event, which can be found by listing the courses by using GET api/course.<br/><br />
                 Once an event exists, you can (optionally) create course credits for that event using POST api/CourseCredit. A course credit creates a unique key usable for a specified number of users, that can either be given out to users for them to self-enrol on the site, or can be used when creating and enrolment using POST api/UserEnrolment.<br/><br /> 
                 <br/><br/>
 

@@ -42,7 +42,7 @@ namespace KreateIT.Data
             bool isActiveDirectoryUser, string LanguageCode, string NetBIOSAccount, int GiftRegisterPermissionLevel, int GiftRegisterRegionID, 
             int GiftRegisterEntityID, Guid UserGUID, bool Dashboard, DateTime? LeavingDate, DateTime? RemovalDate, 
             int RemovalUserID, DateTime? StartDate, bool UserManagementAccess, bool UserEnrolmentAccess, bool ScheduledReportsAccess, 
-            bool ThirdPartyDatabaseUser 
+            bool ThirdPartyDatabaseUser, int RegionID, int EntityID
         )
         {
             int UserID = 0;
@@ -107,6 +107,8 @@ namespace KreateIT.Data
                 if (UserEnrolmentAccess != default(bool)) { SQLFields += "U_MT_ENROLMENTS, "; SQLValues += "@UserEnrolmentAccess, "; args.Add(new SQLArg("@UserEnrolmentAccess", UserEnrolmentAccess ? 'y' : 'n')); }
                 if (ScheduledReportsAccess != default(bool)) { SQLFields += "U_MT_SCHEDULED_REPORTS, "; SQLValues += "@ScheduledReportsAccess, "; args.Add(new SQLArg("@ScheduledReportsAccess", ScheduledReportsAccess ? 'y' : 'n')); }
                 if (ThirdPartyDatabaseUser != default(bool)) { SQLFields += "U_TPD_USER, "; SQLValues += "@ThirdPartyDatabaseUser, "; args.Add(new SQLArg("@ThirdPartyDatabaseUser", ThirdPartyDatabaseUser)); }
+                if (RegionID != default(int)) { SQLFields += "U_GRR_ID, "; SQLValues += "@RegionID, "; args.Add(new SQLArg("@RegionID", RegionID)); }
+                if (EntityID != default(int)) { SQLFields += "U_GRE_ID, "; SQLValues += "@EntityID, "; args.Add(new SQLArg("@EntityID", EntityID)); }
 
                 if (SQLFields.Length > 0 && SQLValues.Length > 0)
                 {
@@ -173,6 +175,8 @@ namespace KreateIT.Data
                 if (UserEnrolmentAccess != default(bool)) { SQLFields += "U_MT_ENROLMENTS = @UserEnrolmentAccess, "; args.Add(new SQLArg("@UserEnrolmentAccess", UserEnrolmentAccess ? 'y' : 'n')); }
                 if (ScheduledReportsAccess != default(bool)) { SQLFields += "U_MT_SCHEDULED_REPORTS = @ScheduledReportsAccess, "; args.Add(new SQLArg("@ScheduledReportsAccess", ScheduledReportsAccess ? 'y' : 'n')); }
                 if (ThirdPartyDatabaseUser != default(bool)) { SQLFields += "U_TPD_USER = @ThirdPartyDatabaseUser, "; args.Add(new SQLArg("@ThirdPartyDatabaseUser", ThirdPartyDatabaseUser)); }
+                if (RegionID != default(int)) { SQLFields += "U_GRR_ID = @RegionID, "; args.Add(new SQLArg("@RegionID", RegionID)); }
+                if (EntityID != default(int)) { SQLFields += "U_GRE_ID = @EntityID, "; args.Add(new SQLArg("@EntityID", EntityID)); }
 
                 if (SQLFields.Length > 0)
                 {

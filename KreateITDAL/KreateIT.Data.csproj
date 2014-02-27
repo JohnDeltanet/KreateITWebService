@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityDAL.cs" />
     <Compile Include="Properties\Connection.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -60,6 +61,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="RegionDAL.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UserDAL.cs" />
     <Compile Include="UserEnrolmentDAL.cs" />

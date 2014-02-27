@@ -47,8 +47,10 @@
   <ItemGroup>
     <Compile Include="CourseBLL.cs" />
     <Compile Include="CourseCreditsBLL.cs" />
+    <Compile Include="EntityBLL.cs" />
     <Compile Include="EventBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionBLL.cs" />
     <Compile Include="Security.cs" />
     <Compile Include="UserBLL.cs" />
     <Compile Include="UserEnrolmentBLL.cs" />

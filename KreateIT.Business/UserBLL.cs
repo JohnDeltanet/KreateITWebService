@@ -77,6 +77,11 @@ namespace KreateIT.Business
         public bool UserEnrolmentAccess { get; set; }
         public bool ScheduledReportsAccess { get; set; }
         public bool ThirdPartyDatabaseUser { get; set; }
+        public int RegionID { get; set; }
+        public RegionBLL Region { get { return RegionBLL.GetDetails(RegionID); } }
+        public int EntityID { get; set; }
+        public EntityBLL Entity { get { return EntityBLL.GetDetails(EntityID); } }
+
         public static int AdminID = 0;
 
         #endregion Properties
@@ -141,6 +146,8 @@ namespace KreateIT.Business
                 UserEnrolmentAccess = dr.Table.Columns.Contains("U_MT_ENROLMENTS") ? (((dr.Field<string>("U_MT_ENROLMENTS") ?? "n").Trim() == "y") ? true : false) : false,
                 ScheduledReportsAccess = dr.Table.Columns.Contains("U_MT_SCHEDULED_REPORTS") ? (((dr.Field<string>("U_MT_SCHEDULED_REPORTS") ?? "n").Trim() == "y") ? true : false) : false,
                 ThirdPartyDatabaseUser = dr.Table.Columns.Contains("U_TPD_USER") ? (((dr.Field<string>("U_TPD_USER") ?? "n").Trim() == "y") ? true : false) : false,
+                RegionID = dr.Table.Columns.Contains("U_GRR_ID") ? (dr.Field<int?>("U_GRR_ID") ?? 0) : 0,
+                EntityID = dr.Table.Columns.Contains("U_GRE_ID") ? (dr.Field<int?>("U_GRE_ID") ?? 0) : 0
             };
         }
 
@@ -164,7 +171,7 @@ namespace KreateIT.Business
         }
 
         public UserBLL(string Title, string FirstName, string LastName, string UserName, string Password, string EMail, bool ChangePassword, string Language, 
-                        bool UserManagementAccess, bool UserEnrolmentAccess, bool ScheduledReportsAccess) : this()
+                        bool UserManagementAccess, bool UserEnrolmentAccess, bool ScheduledReportsAccess, int RegionID, int EntityID) : this()
         {
             this.Title = Title;
             this.FirstName = FirstName;
@@ -178,6 +185,8 @@ namespace KreateIT.Business
             this.UserManagementAccess = UserManagementAccess;
             this.UserEnrolmentAccess = UserEnrolmentAccess;
             this.ScheduledReportsAccess = ScheduledReportsAccess;
+            this.RegionID = RegionID;
+            this.EntityID = EntityID;
         }
 
         public static List<UserBLL> List()
@@ -226,7 +235,7 @@ namespace KreateIT.Business
                 UserFieldString3, UserFieldString4, UserFieldString5, UserFieldDate1, UserFieldDate2, UserFieldDate3, UserFieldList1, UserFieldList2, UserFieldList3, PasswordReset,
                 PasswordResetDate, FailedLogins, NONCE, isPasswordHashed, TempPassword, Salt, LDAP_UniqueID, LDAP_GUID, Domain, DomainUsername,
                 isActiveDirectoryUser, LanguageCode, NetBIOSAccount, GiftRegisterPermissionLevel, GiftRegisterRegionID, GiftRegisterEntityID, UserGUID, Dashboard, LeavingDate, RemovalDate,
-                RemovalUserID, StartDate, UserManagementAccess, UserEnrolmentAccess, ScheduledReportsAccess, ThirdPartyDatabaseUser);
+                RemovalUserID, StartDate, UserManagementAccess, UserEnrolmentAccess, ScheduledReportsAccess, ThirdPartyDatabaseUser, RegionID, EntityID);
             return ID;
         }
 

@@ -52,6 +52,14 @@ namespace KreateITWebService.Models
         /// Allow access to the scheduled reports options under the 'Management Tools' section of the website? (true/false)
         /// </summary>
         public bool AllowScheduledReports { get; set; }
+        /// <summary>
+        /// ID of region (Company). ID's can be obtained using GET api/region
+        /// </summary>
+        public int RegionID { get; set; }
+        /// <summary>
+        /// ID of entity (Department or Location). ID's can be obtained using GET api/entity
+        /// </summary>
+        public int EntityID { get; set; }
 
 
         public int Save()
@@ -59,7 +67,7 @@ namespace KreateITWebService.Models
             UserBLL u = UserBLL.GetDetails(UserName);
             if (u == null)
             {
-                u = new UserBLL(Title, FirstName, LastName, UserName, Password, EMail, ChangePassword, Language, AllowUserCreation, AllowUserEnrolment, AllowScheduledReports);
+                u = new UserBLL(Title, FirstName, LastName, UserName, Password, EMail, ChangePassword, Language, AllowUserCreation, AllowUserEnrolment, AllowScheduledReports, RegionID, EntityID);
             }
             else
             {
@@ -74,6 +82,8 @@ namespace KreateITWebService.Models
                 u.UserManagementAccess = AllowUserCreation;
                 u.UserEnrolmentAccess = AllowUserEnrolment;
                 u.ScheduledReportsAccess = AllowScheduledReports;
+                u.RegionID = RegionID;
+                u.EntityID = EntityID;
             }
             int ID = u.SaveOrUpdate();
             return ID;
@@ -106,10 +116,6 @@ namespace KreateITWebService.Models
         /// </summary>
         public string UserName { get; set; }
         /// <summary>
-        /// Password for user.
-        /// </summary>
-        public string Password { get; set; }
-        /// <summary>
         /// Users EMail.
         /// </summary>
         public string EMail { get; set; }
@@ -121,10 +127,26 @@ namespace KreateITWebService.Models
         /// Standard language-culture name. 
         /// </summary>
         public string Language { get; set; }
+        /// <summary>
+        /// ID for the users Region (Company)
+        /// </summary>
+        public int RegionID { get; set; }
+        /// <summary>
+        /// Name of the users Region (Company)
+        /// </summary>
+        public string RegionName { get; set; }
+        /// <summary>
+        /// ID for the users Entity (Department or Location)
+        /// </summary>
+        public int EntityID { get; set; }
+        /// <summary>
+        /// Name of the users Entity (Department or Location)
+        /// </summary>
+        public string EntityName { get; set; }
 
         public static implicit operator UserDisplay(UserBLL u)
         {
-            return new UserDisplay { ID = u.ID, Title = u.Title, FirstName = u.FirstName, LastName = u.LastName, UserName = u.UserName, Password = "########", EMail = u.EMail, ChangePassword = ((u.PasswordReset == "y") ? true : false), Language = u.LanguageCode };
+            return new UserDisplay { ID = u.ID, Title = u.Title, FirstName = u.FirstName, LastName = u.LastName, UserName = u.UserName, EMail = u.EMail, ChangePassword = ((u.PasswordReset == "y") ? true : false), Language = u.LanguageCode, RegionID = u.RegionID, RegionName = u.Region.Name, EntityID = u.EntityID, EntityName = u.Entity.Name };
         }
 
         public static List<UserDisplay> List()

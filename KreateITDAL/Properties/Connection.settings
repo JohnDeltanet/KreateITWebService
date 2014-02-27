@@ -5,9 +5,9 @@
     <Setting Name="SQLConnString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=ORACLESERVER\SQL2008DEV;Initial Catalog=K5_ENVIRONTEC_BE;User ID=sa;Password=D3lt@net&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=WIN-A6IVLFBUBP2;Initial Catalog=K5_ENVIRONTEC_BE_test;User Id=environtecsql;Password=environ9986435677tec;&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=ORACLESERVER\SQL2008DEV;Initial Catalog=K5_ENVIRONTEC_BE;User ID=sa;Password=D3lt@net</Value>
+      <Value Profile="(Default)">Data Source=WIN-A6IVLFBUBP2;Initial Catalog=K5_ENVIRONTEC_BE_test;User Id=environtecsql;Password=environ9986435677tec;</Value>
     </Setting>
   </Settings>
 </SettingsFile>
